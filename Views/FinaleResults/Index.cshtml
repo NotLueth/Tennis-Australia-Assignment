@@ -1,0 +1,80 @@
+﻿@model IEnumerable<TennisAustraliaAssignment.Models.FinaleResult>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<!-- Header of area and page-->
+<h1>Finale Results</h1>
+
+<p>
+    <!-- Create button -->
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <!-- Column Name -->
+            <th>
+                @Html.DisplayNameFor(model => model.Match)
+            </th>
+            <!-- Column Name -->
+            <th>
+                @Html.DisplayNameFor(model => model.WinRegistrationID)
+            </th>
+            <!-- Column Name -->
+            <th>
+                @Html.DisplayNameFor(model => model.WinRegistrationFinaleScore)
+            </th>
+            <!-- Column Name -->
+            <th>
+                @Html.DisplayNameFor(model => model.SecondRegistrationID)
+            </th>
+            <!-- Column Name -->
+            <th>
+                @Html.DisplayNameFor(model => model.SecondPlayerScore)
+            </th>
+            <!-- Column Name -->
+            <th>
+                @Html.DisplayNameFor(model => model.SetsPlayed)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <!-- Information of Column -->
+            <td>
+                @Html.DisplayFor(modelItem => item.Match.MatchID)
+            </td>
+            <!-- Information of Column -->
+            <td>
+                @Html.DisplayFor(modelItem => item.WinRegistrationID)
+            </td>
+            <!-- Information of Column -->
+            <td>
+                @Html.DisplayFor(modelItem => item.WinRegistrationFinaleScore)
+            </td>
+            <!-- Information of Column -->
+            <td>
+                @Html.DisplayFor(modelItem => item.SecondRegistrationID)
+            </td>
+            <!-- Information of Column -->
+            <td>
+                @Html.DisplayFor(modelItem => item.SecondPlayerScore)
+            </td>
+            <!-- Information of Column -->
+            <td>
+                @Html.DisplayFor(modelItem => item.SetsPlayed)
+            </td>
+            <!-- Edit, details and delete options -->
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.FinaleResultID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.FinaleResultID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.FinaleResultID">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

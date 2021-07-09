@@ -1,0 +1,113 @@
+﻿@model IEnumerable<TennisAustraliaAssignment.Models.Tournament>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<!-- Header of area and page-->
+
+<h1>Tournament List</h1>
+
+<p>
+    <!-- Create button -->
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <!-- Column Name -->
+            <th>
+                @Html.DisplayNameFor(model => model.TournamentName)
+            </th>
+            <!-- Column Name -->
+            <th>
+                @Html.DisplayNameFor(model => model.Qualifier)
+            </th>
+            <!-- Column Name -->
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <!-- Column Name -->
+            <th>
+                @Html.DisplayNameFor(model => model.EndDate)
+            </th>
+            <!-- Column Name -->
+            <th>
+                @Html.DisplayNameFor(model => model.SingupStartDate)
+            </th>
+            <!-- Column Name -->
+            <th>
+                @Html.DisplayNameFor(model => model.SingupEndDate)
+            </th>
+            <!-- Column Name -->
+            <th>
+                @Html.DisplayNameFor(model => model.PrizeMoney)
+            </th>
+            <!-- Column Name -->
+            <th>
+                @Html.DisplayNameFor(model => model.Venue)
+            </th>
+            <!-- Column Name -->
+            <th>
+                @Html.DisplayNameFor(model => model.TournamentType)
+            </th>
+            <!-- Column Name -->
+            <th>
+                @Html.DisplayNameFor(model => model.Organiser)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <!-- Information of Column -->
+            <td>
+                @Html.DisplayFor(modelItem => item.TournamentName)
+            </td>
+            <!-- Information of Column -->
+            <td>
+                @Html.DisplayFor(modelItem => item.Qualifier)
+            </td>
+            <!-- Information of Column -->
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <!-- Information of Column -->
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <!-- Information of Column -->
+            <td>
+                @Html.DisplayFor(modelItem => item.SingupStartDate)
+            </td>
+            <!-- Information of Column -->
+            <td>
+                @Html.DisplayFor(modelItem => item.SingupEndDate)
+            </td>
+            <!-- Information of Column -->
+            <td>
+                @Html.DisplayFor(modelItem => item.PrizeMoney)
+            </td>
+            <!-- Information of Column -->
+            <td>
+                @Html.DisplayFor(modelItem => item.Venue.VenueName)
+            </td>
+            <!-- Information of Column -->
+            <td>
+                @Html.DisplayFor(modelItem => item.TournamentType.TournamentTypeName)
+            </td>
+            <!-- Information of Column -->
+            <td>
+                @Html.DisplayFor(modelItem => item.Organiser.FullName)
+            </td>
+            <!-- Edit, details and delete options -->
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TournamentID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.TournamentID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.TournamentID">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

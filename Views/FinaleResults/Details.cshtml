@@ -1,0 +1,67 @@
+﻿@model TennisAustraliaAssignment.Models.FinaleResult
+
+@{
+    ViewData["Title"] = "Details";
+}
+<!-- Header of Page -->
+<h1>Details</h1>
+
+<div>
+    <!-- Header of area -->
+    <h4>FinaleResult</h4>
+    <hr />
+    <dl class="row">
+        <!-- Column Name -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Match)
+        </dt>
+        <!-- Information of Column -->
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Match.Round)
+        </dd>
+        <!-- Column Name -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WinRegistrationID)
+        </dt>
+        <!-- Information of Column -->
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WinRegistrationID)
+        </dd>
+        <!-- Column Name -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WinRegistrationFinaleScore)
+        </dt>
+        <!-- Information of Column -->
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WinRegistrationFinaleScore)
+        </dd>
+        <!-- Column Name -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SecondRegistrationID)
+        </dt>
+        <!-- Information of Column -->
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SecondRegistrationID)
+        </dd>
+        <!-- Column Name -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SecondPlayerScore)
+        </dt>
+        <!-- Information of Column -->
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SecondPlayerScore)
+        </dd>
+        <!-- Column Name -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SetsPlayed)
+        </dt>
+        <!-- Information of Column -->
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SetsPlayed)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.FinaleResultID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,64 @@
+﻿@model IEnumerable<TennisAustraliaAssignment.Models.Match>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<!-- Header of area and page-->
+<h1>Matches</h1>
+
+<p>
+    <!-- Create button -->
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <!-- Column Name -->
+            <th>
+                @Html.DisplayNameFor(model => model.Round)
+            </th>
+            <!-- Column Name -->
+            <th>
+                @Html.DisplayNameFor(model => model.TournamentBracket)
+            </th>
+            <!-- Column Name -->
+            <th>
+                @Html.DisplayNameFor(model => model.FirstRegistrationID)
+            </th>
+            <!-- Column Name -->
+            <th>
+                @Html.DisplayNameFor(model => model.SecondRegistrationID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <!-- Information of Column -->
+            <td>
+                @Html.DisplayFor(modelItem => item.Round)
+            </td>
+            <!-- Information of Column -->
+            <td>
+                @Html.DisplayFor(modelItem => item.TournamentBracket.TournamentBracketID)
+            </td>
+            <!-- Information of Column -->
+            <td>
+                <a class="nav-link text-dark" asp-area="" asp-controller="RegistrationDetails" asp-action="Index">@Html.DisplayFor(modelItem => item.FirstRegistrationID)</a>
+</td>
+            <!-- Information of Column -->
+            <td> 
+                <a class="nav-link text-dark" asp-area="" asp-controller="RegistrationDetails" asp-action="Index">@Html.DisplayFor(modelItem => item.SecondRegistrationID)</a>
+            </td>
+            <!-- Edit, details and delete options -->
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MatchID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MatchID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MatchID">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

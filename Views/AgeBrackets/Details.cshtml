@@ -1,0 +1,36 @@
+﻿@model TennisAustraliaAssignment.Models.AgeBracket
+
+@{
+    ViewData["Title"] = "Details";
+}
+<!-- Header of Page -->
+<h1>Details</h1>
+
+<div>
+    <!-- Header of area -->
+    <h4>AgeBracket</h4>
+    <hr />
+    <dl class="row">
+        <!-- Column Name -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AgeBracketName)
+        </dt>
+        <!-- Information of Column -->
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AgeBracketName)
+        </dd>
+        <!-- Column Name -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AgeBracketDescription)
+        </dt>
+        <!-- Information of Column -->
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AgeBracketDescription)
+        </dd>
+    </dl>
+</div>
+<!-- Save edit or back to list button -->
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.AgeBracketID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<TennisAustraliaAssignment.Models.RegistrationDetails>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<!-- Header of area and page-->
+<h1>Registration Details</h1>
+
+<p>
+    <!-- Create button -->
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <!-- Column Name -->
+            <th>
+                @Html.DisplayNameFor(model => model.Registration)
+            </th>
+            <!-- Column Name -->
+            <th>
+                @Html.DisplayNameFor(model => model.Player)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <!-- Information of Column -->
+            <td>
+                @Html.DisplayFor(modelItem => item.Registration.RegistrationID)
+            </td>
+            <!-- Information of Column -->
+            <td>
+                @Html.DisplayFor(modelItem => item.Player.FullName)
+            </td>
+            <!-- Edit, details and delete options -->
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.RegistrationDetailsID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.RegistrationDetailsID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.RegistrationDetailsID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

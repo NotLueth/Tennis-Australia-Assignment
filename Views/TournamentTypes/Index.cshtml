@@ -1,0 +1,49 @@
+﻿@model IEnumerable<TennisAustraliaAssignment.Models.TournamentType>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<!-- Header of area and page-->
+
+<h1>Tournament Types</h1>
+
+<p>
+    <!-- Create button -->
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <!-- Column Name -->
+            <th>
+                @Html.DisplayNameFor(model => model.TournamentTypeName)
+            </th>
+            <!-- Column Name -->
+            <th>
+                @Html.DisplayNameFor(model => model.TournamentTypeDescription)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <!-- Information of Column -->
+            <td>
+                @Html.DisplayFor(modelItem => item.TournamentTypeName)
+            </td>
+            <!-- Information of Column -->
+            <td>
+                @Html.DisplayFor(modelItem => item.TournamentTypeDescription)
+            </td>
+            <!-- Edit, details and delete options -->
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TournamentTypeID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.TournamentTypeID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.TournamentTypeID">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

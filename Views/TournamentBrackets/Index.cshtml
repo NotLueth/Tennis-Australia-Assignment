@@ -1,0 +1,57 @@
+﻿@model IEnumerable<TennisAustraliaAssignment.Models.TournamentBracket>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<!-- Header of area and page-->
+
+<h1>Brackets of Tournaments</h1>
+
+<p>
+    <!-- Create button -->
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <!-- Column Name -->
+            <th>
+                @Html.DisplayNameFor(model => model.Tournament)
+            </th>
+            <!-- Column Name -->
+            <th>
+                @Html.DisplayNameFor(model => model.AgeBracket)
+            </th>
+            <!-- Column Name -->
+            <th>
+                @Html.DisplayNameFor(model => model.LeagueRatingLeagueID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <!-- Information of Column -->
+            <td>
+                @Html.DisplayFor(modelItem => item.Tournament.TournamentName)
+            </td>
+            <!-- Information of Column -->
+            <td>
+                @Html.DisplayFor(modelItem => item.AgeBracket.AgeBracketName)
+            </td>
+            <!-- Information of Column -->
+            <td>
+                @Html.DisplayFor(modelItem => item.LeagueRating.LeagueName)
+            </td>
+            <!-- Edit, details and delete options -->
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TournamentBracketID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.TournamentBracketID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.TournamentBracketID">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

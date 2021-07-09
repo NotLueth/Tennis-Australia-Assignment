@@ -1,0 +1,54 @@
+﻿@model TennisAustraliaAssignment.Models.Match
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<!-- Header of Page -->
+<h1>Edit</h1>
+<!-- Header of area -->
+<h4>Match</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MatchID" />
+            <!-- Round Field -->
+            <div class="form-group">
+                <label asp-for="Round" class="control-label"></label>
+                <input asp-for="Round" class="form-control" />
+                <span asp-validation-for="Round" class="text-danger"></span>
+            </div>
+            <!-- Tournament Bracket ID Field -->
+            <div class="form-group">
+                <label asp-for="TournamentBracketID" class="control-label"></label>
+                <select asp-for="TournamentBracketID" class="form-control" asp-items="ViewBag.TournamentBracketID"></select>
+                <span asp-validation-for="TournamentBracketID" class="text-danger"></span>
+            </div>
+            <!-- First Registration ID Field -->
+            <div class="form-group">
+                <label asp-for="FirstRegistrationID" class="control-label"></label>
+                <select asp-for="FirstRegistrationID" class="form-control" asp-items="ViewBag.RegistrationID"></select>
+                <span asp-validation-for="FirstRegistrationID" class="text-danger"></span>
+            </div>
+            <!-- Second Registration ID Field -->
+            <div class="form-group">
+                <label asp-for="SecondRegistrationID" class="control-label"></label>
+                <select asp-for="SecondRegistrationID" class="form-control" asp-items="ViewBag.RegistrationID"></select>
+                <span asp-validation-for="SecondRegistrationID" class="text-danger"></span>
+            </div>
+            <!-- Save button -->
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,43 @@
+﻿@model TennisAustraliaAssignment.Models.AgeBracket
+
+@{
+    ViewData["Title"] = "Create";
+}
+<!-- Header of Page -->
+<h1>Create</h1>
+
+<!-- Header of area -->
+<h4>AgeBracket</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <!-- Form used to get information for create -->
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <!-- Age Bracket Name Field -->
+            <div class="form-group">
+                <label asp-for="AgeBracketName" class="control-label"></label>
+                <input asp-for="AgeBracketName" class="form-control" />
+                <span asp-validation-for="AgeBracketName" class="text-danger"></span>
+            </div>
+            <!-- Age Bracket Description field -->
+            <div class="form-group">
+                <label asp-for="AgeBracketDescription" class="control-label"></label>
+                <input asp-for="AgeBracketDescription" class="form-control" />
+                <span asp-validation-for="AgeBracketDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <!-- Save button -->
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

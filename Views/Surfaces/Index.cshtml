@@ -1,0 +1,49 @@
+﻿@model IEnumerable<TennisAustraliaAssignment.Models.Surface>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<!-- Header of area and page-->
+
+<h1>Surface types</h1>
+
+<p>
+    <!-- Create button -->
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <!-- Column Name -->
+            <th>
+                @Html.DisplayNameFor(model => model.SurfaceName)
+            </th>
+            <!-- Column Name -->
+            <th>
+                @Html.DisplayNameFor(model => model.SurfaceDescription)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <!-- Information of Column -->
+            <td>
+                @Html.DisplayFor(modelItem => item.SurfaceName)
+            </td>
+            <!-- Information of Column -->
+            <td>
+                @Html.DisplayFor(modelItem => item.SurfaceDescription)
+            </td>
+            <!-- Edit, details and delete options -->
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SurfaceID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SurfaceID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SurfaceID">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

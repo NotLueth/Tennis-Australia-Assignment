@@ -1,0 +1,52 @@
+﻿@model TennisAustraliaAssignment.Models.SetResult
+
+@{
+    ViewData["Title"] = "Details";
+}
+<!-- Header of Page -->
+<h1>Details</h1>
+
+<div>
+    <!-- Header of area -->
+    <h4>SetResult</h4>
+    <hr />
+    <dl class="row">
+        <!-- Column Name -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.set)
+        </dt>
+        <!-- Information of Column -->
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.set)
+        </dd>
+        <!-- Column Name -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstRegIDScore)
+        </dt>
+        <!-- Information of Column -->
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FirstRegIDScore)
+        </dd>
+        <!-- Column Name -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SecondRegIDScore)
+        </dt>
+        <!-- Information of Column -->
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SecondRegIDScore)
+        </dd>
+        <!-- Column Name -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Match)
+        </dt>
+        <!-- Information of Column -->
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Match.MatchID)
+        </dd>
+    </dl>
+</div>
+<!-- Save edit or back to list button -->
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.SetResultID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

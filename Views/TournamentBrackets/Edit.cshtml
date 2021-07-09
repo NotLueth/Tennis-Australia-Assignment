@@ -1,0 +1,48 @@
+﻿@model TennisAustraliaAssignment.Models.TournamentBracket
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<!-- Header of Page -->
+<h1>Edit</h1>
+<!-- Header of area -->
+<h4>TournamentBracket</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TournamentBracketID" />
+            <!-- Tournament ID Field -->
+            <div class="form-group">
+                <label asp-for="TournamentID" class="control-label"></label>
+                <select asp-for="TournamentID" class="form-control" asp-items="ViewBag.TournamentID"></select>
+                <span asp-validation-for="TournamentID" class="text-danger"></span>
+            </div>
+            <!-- Age Bracket ID Field -->
+            <div class="form-group">
+                <label asp-for="AgeBracketID" class="control-label"></label>
+                <select asp-for="AgeBracketID" class="form-control" asp-items="ViewBag.AgeBracketID"></select>
+                <span asp-validation-for="AgeBracketID" class="text-danger"></span>
+            </div>
+            <!-- League ID Field -->
+            <div class="form-group">
+                <label asp-for="LeagueRatingLeagueID" class="control-label"></label>
+                <select asp-for="LeagueRatingLeagueID" class="form-control" asp-items="ViewBag.LeagueRatingLeagueID"></select>
+                <span asp-validation-for="LeagueRatingLeagueID" class="text-danger"></span>
+            </div>
+            <!-- Save button -->
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

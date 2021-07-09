@@ -1,0 +1,42 @@
+﻿@model TennisAustraliaAssignment.Models.RegistrationDetails
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<!-- Header of Page -->
+<h1>Edit</h1>
+<!-- Header of area -->
+<h4>RegistrationDetails</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="RegistrationDetailsID" />
+            <!-- Registration ID Field -->
+            <div class="form-group">
+                <label asp-for="RegistrationID" class="control-label"></label>
+                <select asp-for="RegistrationID" class="form-control" asp-items="ViewBag.RegistrationID"></select>
+                <span asp-validation-for="RegistrationID" class="text-danger"></span>
+            </div>
+            <!-- Player ID Field -->
+            <div class="form-group">
+                <label asp-for="PlayerPersonalID" class="control-label"></label>
+                <select asp-for="PlayerPersonalID" class="form-control" asp-items="ViewBag.PlayerPersonalID"></select>
+                <span asp-validation-for="PlayerPersonalID" class="text-danger"></span>
+            </div>
+            <!-- Save button -->
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

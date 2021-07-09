@@ -1,0 +1,86 @@
+﻿@model TennisAustraliaAssignment.Models.Tournament
+
+@{
+    ViewData["Title"] = "Create";
+}
+<!-- Header of Page -->
+<h1>Create</h1>
+<!-- Header of area -->
+<h4>Tournament</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <!-- Tournament Name Field -->
+            <div class="form-group">
+                <label asp-for="TournamentName" class="control-label"></label>
+                <input asp-for="TournamentName" class="form-control" />
+                <span asp-validation-for="TournamentName" class="text-danger"></span>
+            </div>
+            <!-- Qualifer Field -->
+            <div class="form-group">
+                <label asp-for="Qualifier" class="control-label"></label>
+                <input asp-for="Qualifier" class="form-control" />
+                <span asp-validation-for="Qualifier" class="text-danger"></span>
+            </div>
+            <!-- Tournament Start Date Field -->
+            <div class="form-group">
+                <label asp-for="StartDate" class="control-label"></label>
+                <input asp-for="StartDate" class="form-control" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+            <!-- Tournament End Date Field -->
+            <div class="form-group">
+                <label asp-for="EndDate" class="control-label"></label>
+                <input asp-for="EndDate" class="form-control" />
+                <span asp-validation-for="EndDate" class="text-danger"></span>
+            </div>
+            <!-- Signup Start Date Field -->
+            <div class="form-group">
+                <label asp-for="SingupStartDate" class="control-label"></label>
+                <input asp-for="SingupStartDate" class="form-control" />
+                <span asp-validation-for="SingupStartDate" class="text-danger"></span>
+            </div>
+            <!-- Signup End Date Field -->
+            <div class="form-group">
+                <label asp-for="SingupEndDate" class="control-label"></label>
+                <input asp-for="SingupEndDate" class="form-control" />
+                <span asp-validation-for="SingupEndDate" class="text-danger"></span>
+            </div>
+            <!-- Prize money Field -->
+            <div class="form-group">
+                <label asp-for="PrizeMoney" class="control-label"></label>
+                <input asp-for="PrizeMoney" class="form-control" />
+                <span asp-validation-for="PrizeMoney" class="text-danger"></span>
+            </div>
+            <!-- Venue ID Field -->
+            <div class="form-group">
+                <label asp-for="VenueID" class="control-label"></label>
+                <select asp-for="VenueID" class="form-control" asp-items="ViewBag.VenueID"></select>
+            </div>
+            <!-- Tournament Type ID Field -->
+            <div class="form-group">
+                <label asp-for="TournamentTypeID" class="control-label"></label>
+                <select asp-for="TournamentTypeID" class="form-control" asp-items="ViewBag.TournamentTypeID"></select>
+            </div>
+            <!-- Organiser ID Field -->
+            <div class="form-group">
+                <label asp-for="OrganiserPersonalID" class="control-label"></label>
+                <select asp-for="OrganiserPersonalID" class="form-control" asp-items="ViewBag.OrganiserPersonalID"></select>
+            </div>
+            <!-- Save button -->
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

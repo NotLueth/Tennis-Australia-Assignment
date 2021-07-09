@@ -1,0 +1,84 @@
+﻿@model TennisAustraliaAssignment.Models.PersonalDetails
+
+@{
+    ViewData["Title"] = "Details";
+}
+<!-- Header of Page -->
+<h1>Details</h1>
+
+<div>
+    <!-- Header of area -->
+    <h4>PersonalDetails</h4>
+    <hr />
+    <dl class="row">
+        <!-- Column Name -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <!-- Information of Column -->
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <!-- Column Name -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <!-- Information of Column -->
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <!-- Column Name -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+        <!-- Information of Column -->
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+        <!-- Column Name -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Street)
+        </dt>
+        <!-- Information of Column -->
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Street)
+        </dd>
+        <!-- Column Name -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+        <!-- Information of Column -->
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.City)
+        </dd>
+        <!-- Column Name -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Postcode)
+        </dt>
+        <!-- Information of Column -->
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Postcode)
+        </dd>
+        <!-- Column Name -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <!-- Information of Column -->
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <!-- Column Name -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+        <!-- Information of Column -->
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+    </dl>
+</div>
+<!-- Save edit or back to list button -->
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.PersonalID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
